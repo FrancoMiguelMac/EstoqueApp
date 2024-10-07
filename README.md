@@ -1,3 +1,7 @@
+# Desenho da solução para Cloud
+
+![Alt text](Estoque.API/assets/produtosapi.drawio.png)
+
 # Estoque App
 
 Componentes e frameworks utilizados
