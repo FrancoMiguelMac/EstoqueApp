@@ -17,8 +17,7 @@ Arquitetura em camadas aderente ao Clean Architecture e ao DDD
 - Camada de infra
 - Camada de crosscutting
 
-  # Como subir o ambiente local
-
-  Basta dar um docker compose up que todos os componentes necessários e a api ficarão de pé.
+# Como subir o ambiente local
+Basta dar um docker compose up que todos os componentes necessários e a api ficarão de pé.
 
 
