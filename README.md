@@ -5,7 +5,7 @@ Componentes e frameworks utilizados
 - EF Core
 - Postgresql
 - Redis
-- Circuit breaker com Polly
+- Circuit breaker com Polly para trazer resiliência a operação da api mesmo quando a api de cotação estiver fora do ar.
 - FluentValidation
 - Docker e docker compose para subir a aplicação, o BD e o Redis
 
