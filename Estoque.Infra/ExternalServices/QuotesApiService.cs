@@ -23,7 +23,7 @@ namespace Estoque.Infra.ExternalServices
 
                 string responseBody = await response.Content.ReadAsStringAsync();
                 if (string.IsNullOrEmpty(responseBody))
-                    return "1";
+                    return "1"; // Valor padrão para deixar o valor da moeda inalterado quando não consegue a integração.
                     
                 Console.WriteLine(responseBody);
 
@@ -39,7 +39,7 @@ namespace Estoque.Infra.ExternalServices
             catch (BrokenCircuitException)
             {
                 Console.WriteLine("Circuit Breaker - Requisição bloqueada.");
-                return "1";
+                return "1"; // Valor padrão para deixar o valor da moeda inalterado quando não consegue a integração.
             }
         }
     }
