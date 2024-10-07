@@ -25,6 +25,7 @@ services:
 
   estoque.cache:
     image: redis:latest
+    container_name: estoque.cache
     restart: always
     ports:
       - '6379:6379'

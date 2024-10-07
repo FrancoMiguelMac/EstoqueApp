@@ -1,4 +1,5 @@
 using Estoque.API.Extensions;
+using Estoque.API.Policies;
 using Estoque.Application.Contracts;
 using Estoque.Application.Implementations;
 using Estoque.Crosscutting.Dtos;
@@ -21,7 +22,12 @@ QuoteApiServiceEndpoint quoteApiServiceEndpointModel = new();
 builder.Configuration.GetSection("QuoteApiServiceEndpoint").Bind(quoteApiServiceEndpointModel);
 builder.Services.AddSingleton(quoteApiServiceEndpointModel);
 
-builder.Services.AddHttpClient<IQuotesApiService, QuotesApiService>(client => { client.BaseAddress = new Uri(quoteApiServiceEndpointModel.Address); });
+FallbackPolicy fallbackPolicy = new();
+
+builder.Services.AddHttpClient<IQuotesApiService, QuotesApiService>(client => { client.BaseAddress = new Uri(quoteApiServiceEndpointModel.Address); })
+    .AddPolicyHandler(RetryPolicy.GetGenericRetryPolicy(retryCount: 3))
+    .AddPolicyHandler(fallbackPolicy.GetFallback())
+    .AddPolicyHandler(CircuitBreakerPolicy.GetCircuitBreakerPolicy(exceptionsAllowedBeforeBreaking: 5, durationOfBreakInSeconds: 15)); 
 
 builder.Services.AddDbContext<MicroServiceContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("Database")));
