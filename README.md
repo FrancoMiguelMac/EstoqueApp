@@ -1,5 +1,7 @@
 # Desenho da solução para Cloud
 
+Em uma eventual publicação em produção com um front end acessando a api de produtos, poderia-se adotar a seguinte solução cloud native:
+
 ![Alt text](Estoque.API/assets/produtosapi.drawio.png)
 
 # Estoque App
