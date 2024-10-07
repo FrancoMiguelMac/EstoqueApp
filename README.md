@@ -8,6 +8,7 @@ Componentes e frameworks utilizados
 - Circuit breaker com Polly para trazer resiliência a operação da api mesmo quando a api de cotação estiver fora do ar.
 - FluentValidation
 - Docker e docker compose para subir a aplicação, o BD e o Redis
+- Xunit para testes unitários 
 
 
 Arquitetura em camadas aderente ao Clean Architecture e ao DDD
@@ -16,6 +17,7 @@ Arquitetura em camadas aderente ao Clean Architecture e ao DDD
 - Camada de domínio
 - Camada de infra
 - Camada de crosscutting
+- Camada de testes
 
 # Como subir o ambiente local
 Basta dar um docker compose up que todos os componentes necessários e a api ficarão de pé.
