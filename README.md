@@ -1,8 +1,14 @@
 # Desenho da solução para Cloud
 
-Em uma eventual publicação em produção com um front end acessando a api de produtos, poderia-se adotar a seguinte solução cloud native:
+**Em uma eventual publicação em produção com um front end acessando a api de produtos, poderia-se adotar a solução cloud native conforme desenhos a baixo:**
 
-![Alt text](Estoque.API/assets/produtosapi.drawio.png)
+## Contexto Identity Management
+
+![Alt text](Estoque.API/assets/identity_context.drawio.png)
+
+## Contexto Estoque
+
+![Alt text](Estoque.API/assets/estoque_context.drawio.png)
 
 # Estoque App
 
