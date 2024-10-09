@@ -4,9 +4,13 @@
 
 ## Contexto Identity Management
 
+Contexto necessário para atender requisitos de autenticação e autorização mínimos para uma aplicação exposta em produção. Esse contexto serve como single sign on para uma arquitetura de microserviços em que um único conjunto de credenciais irá servir como autenticador e autorizador para os múltiplos serviços expostos.
+
 ![Alt text](Estoque.API/assets/identity_context.drawio.png)
 
 ## Contexto Estoque
+
+Contexto protegido por token JWT que é obtido pelo usuário no contexto de identity management antes de acessar os recursos deste contexto.
 
 ![Alt text](Estoque.API/assets/estoque_context.drawio.png)
 
