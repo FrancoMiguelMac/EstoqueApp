@@ -1,6 +1,6 @@
 # Desenho da solução para Cloud
 
-**Em uma eventual publicação em produção com um front end acessando a api de produtos, poderia-se adotar a solução cloud native conforme desenhos a baixo:**
+**Em uma eventual publicação em produção com um front end acessando a api de produtos, poderia-se adotar a solução cloud native com dois contextos, conforme desenhos a baixo:**
 
 ## Contexto Identity Management
 
