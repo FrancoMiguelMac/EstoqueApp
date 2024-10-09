@@ -29,3 +29,38 @@ services:
     restart: always
     ports:
       - '6379:6379'
+
+  keycloak.database:
+    image: postgres:latest
+    container_name: keycloak.database
+    environment:
+      - POSTGRES_DB=keycloak
+      - POSTGRES_USER=keycloak
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+  keycloak.app:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak.app
+    environment:
+      DB_VENDOR: postgres
+      DB_ADDR: keycloak.database
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_PASSWORD: password
+      DB_SCHEMA: public
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command: start-dev
+    ports:
+      - 9090:8080
+    depends_on:
+      - keycloak.database
+
+volumes:
+  postgres_data:
+
