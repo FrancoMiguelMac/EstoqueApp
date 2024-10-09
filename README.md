@@ -38,4 +38,15 @@ Arquitetura em camadas aderente ao Clean Architecture e ao DDD
 # Como subir o ambiente local
 Basta dar um docker compose up que todos os componentes necessários e a api ficarão de pé.
 
+Para o keycloak configurar o keycloak siga os seguintes passos:
+
+- Acesse o link http://localhost:9090/.
+- Execute o login com usuário e senha configurados no docker-compose.yml
+- Crie um novo Realm
+- Crie um novo Client
+- Crie um novo Scope
+- Crie um Mapper do tipo Audience e associe ele ao Client
+- Adicione o scope em client scopes como 'Default'
+- Crie um usuário e senha
+
 
